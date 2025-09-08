@@ -20,4 +20,4 @@ No final, o sistema exibe quem foi o vencedor.
 - Design responsivo para diferentes dispositivos  
  
 
-## 
+### 👨‍💻 Desenvolvido por Brian Vigo de Oliveira
