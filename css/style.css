@@ -18,7 +18,6 @@ body {
 .result_images {
     display: flex;
     column-gap: 7rem;
-
 }
 
 .result_images img {
@@ -77,20 +76,37 @@ body {
     pointer-events: none;
 
 }
+
 /* -------------------------------------------------------------------------------------------------- */
 /* Média Query para mobile */
 @media (max-width: 768px) {
-    body {
-        margin: 20px;
-    }
 
     .container {
         padding: 1rem 3rem;
     }
+
+    .result_images img {
+        width: 80px;
+    }
+
+    .result {
+        font-size: 1rem;
+        margin: 1rem 0 0 0;
+    }
 }
+
 /* Média query para tables ou celulares maiores/deitados */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .container{
+
+    .container {
         padding: 1rem 4rem;
+    }
+
+    .result_images img {
+        width: 90px;
+    }
+
+    .result {
+        font-size: 1.5rem;
     }
 }
