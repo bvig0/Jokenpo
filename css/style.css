@@ -1,0 +1,79 @@
+@import url('config.css');
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-background);
+}
+
+.container {
+    padding: 2rem 7rem;
+    border-radius: 14px;
+    background-color: var(--cor-branco);
+    box-shadow: 0 5px 10px var(--cor-preto);
+}
+
+.result_images {
+    display: flex;
+    column-gap: 7rem;
+
+}
+
+.result_images img {
+    width: 100px;
+}
+
+.user_result img {
+    transform: rotate(90deg);
+}
+
+.cpu_result img {
+    transform: rotate(-90deg) rotateY(180deg);
+}
+
+.result {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--cor-roxo);
+    margin: 1.5rem 0 0 0;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0 0 0;
+}
+
+.option_image {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.option_image:hover {
+    opacity: 1;
+}
+
+.option_image.active {
+    opacity: 1;
+}
+
+.option_image img {
+    width: 50px;
+    pointer-events: none;
+
+}
+
+.option_image p {
+    color: var(--cor-roxo);
+    font-size: 1.2rem;
+    margin: 4px 0 0 0;
+    pointer-events: none;
+
+}
