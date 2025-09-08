@@ -79,7 +79,6 @@ body {
 }
 /* -------------------------------------------------------------------------------------------------- */
 /* Média Query para mobile */
-
 @media (max-width: 768px) {
     body {
         margin: 20px;
@@ -89,7 +88,6 @@ body {
         padding: 1rem 3rem;
     }
 }
-
 /* Média query para tables ou celulares maiores/deitados */
 @media (min-width: 769px) and (max-width: 1024px) {
     .container{
