@@ -5,7 +5,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--cor-background);
+    background-color: var(--cor-roxo);
 }
 
 .container {
@@ -25,11 +25,11 @@ body {
     width: 100px;
 }
 
-.user_result img {
+.player_result img {
     transform: rotate(90deg);
 }
 
-.cpu_result img {
+.computer_result img {
     transform: rotate(-90deg) rotateY(180deg);
 }
 
@@ -76,4 +76,23 @@ body {
     margin: 4px 0 0 0;
     pointer-events: none;
 
+}
+/* -------------------------------------------------------------------------------------------------- */
+/* Média Query para mobile */
+
+@media (max-width: 768px) {
+    body {
+        margin: 20px;
+    }
+
+    .container {
+        padding: 1rem 3rem;
+    }
+}
+
+/* Média query para tables ou celulares maiores/deitados */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container{
+        padding: 1rem 4rem;
+    }
 }

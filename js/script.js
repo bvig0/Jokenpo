@@ -1,25 +1,39 @@
-// Pegando os elementos DOM
+// Pegando os elementos necessarios
+const options = document.querySelectorAll(".option_image"),
+playerImg = document.querySelector(".player_result img"),
+computerImg = document.querySelector(".computer_result img"), 
+resultText = document.querySelector(".result h2"),
 
-const gameContainer = document.querySelector(".container"),
-    user = document.querySelector(".user_result img"),
-    cpu = document.querySelector(".cpu_result img"),
-    result = document.querySelector(".result h2"),
-    op = document.querySelectorAll(".option_image");
+choices = ["pedra", "papel", "tesoura"]; // Lista de opções disponíveis
 
-op.forEach((image, index) => {
-    image.addEventListener("click", (e) => {
-        image.classList.add("active");
+// Percorre cada opção e adiciona o clique
+options.forEach((option, index) => {
+  option.addEventListener("click", () => {
+    // Marca a opção clicada como ativa
+    options.forEach(o => o.classList.remove("active")); // Remove todos como ativo
+    option.classList.add("active"); // Deixa qual você clicou como Ativo
 
-        op.forEach((image2, index2) => {
-            // Se a imagem clicada atual for diferente da clicada, a antiga perde o "active"
-            index !== index2 && image2.classList.remove("active");
-        });
+    // Escolha do Jogador. Pega o index das opções e atribui a que foi clicada na imagem que representa o player
+    const playerChoice = choices[index]; 
+    playerImg.src = `img/${playerChoice}.png`; 
 
-        let imgSrc = e.target.querySelector("img").src; // Cria uma variavel que pega a imagem clicada
-        user.src = imgSrc; // Faz a imagem clicada ser a mesma imagem que representa o usuario acima
+    // Sorteio da escolha do computador
+    const computerChoice = choices[Math.floor(Math.random() * 3)];
+    computerImg.src = `img/${computerChoice}.png`;
 
-        let cpuNumber = Math.floor(Math.random() * 3);
-        let cpuImg = ["img/rock.png", "img/paper.png", "img/scissors.png"];
-        cpu.src = cpuImg[cpuNumber]
-    });
+    // Verificação de quem ganhou
+
+    // Player Ganha 
+    if(playerChoice==="pedra" && computerChoice==="tesoura" ||
+        playerChoice==="papel" && computerChoice==="pedra" ||
+        playerChoice==="tesoura" && computerChoice==="papel"){
+        resultText.textContent = "Você ganhou!!";
+    } 
+    else if(playerChoice===computerChoice) {
+        resultText.textContent = "Empate!!";
+    }
+    else {
+        resultText.textContent = "Você perdeu!!"
+    }
+  });
 });
