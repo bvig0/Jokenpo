@@ -33,7 +33,7 @@ options.forEach((option, index) => {
         resultText.textContent = "Empate!!";
     }
     else {
-        resultText.textContent = "Você perdeu!!"
+        resultText.textContent = "Você perdeu!!";
     }
   });
 });
